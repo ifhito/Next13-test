@@ -1,9 +1,11 @@
-export async function Test() {
-    const test = await fetch('https://weather.tsukumijima.net/api/forecast?city=400040')
-    const res = await test.json()
+import { Suspense } from "react"
+import { Test1 } from "./test1.server"
+export async function Test({ children }) {
+    
     return (
         <div>
-            {res?.title}
+            <Test1 />
+            {children}
         </div>
     )
 }
